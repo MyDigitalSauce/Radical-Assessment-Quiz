@@ -1,0 +1,58 @@
+.container  {
+  margin: 10%;
+  width: 80%;
+  height: 80vh;
+  margin-top: 48px;
+}
+
+// text
+
+.Question {
+  margin-top: 24px;
+}
+.text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  color: #21030d;
+  text-align: center;
+}
+.Title  {
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  color: #b20639;
+  font-weight: 300;
+}
+.quiz-form  {
+  align-content: center;
+}
+
+// buttons
+.Next {
+  margin: 12px 10% 12px 10%;
+  width: 80%;
+}
+.Back{
+  margin: 12px 10% 12px 10%;
+  width: 80%;
+}
+
+//Inputs
+.Question-1-Input {
+  width: 80%;
+  margin: 12px 10% 12px 10%;
+}
+.Question-2-Input {
+  width: 80%;
+  margin: 12px 10% 12px 10%;
+}
+
+
+// Photos
+.ST1  {
+  width: 25%;
+}
+.ST1:hover  {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}

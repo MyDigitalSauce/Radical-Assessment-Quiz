@@ -1,0 +1,46 @@
+  <h1 class="Title">Skin Care Quiz</h1>
+
+
+<div class="container">
+  <mat-card class="background-card">
+    <mat-progress-bar mode="determinate" value="{{((Current_Question-1)/6) * 100}}"></mat-progress-bar>
+
+    <!-- QUESTION 1 -->
+    <div class="Question-1" *ngIf="Current_Question === 1">
+      <h1 class="Question text">What is your age?</h1>
+      <mat-form-field class="Question-1-Input">
+        <input matInput placeholder="Age" value="{{Q1_A}}">
+      </mat-form-field>
+    </div>
+
+    <!-- QUESTION 2 -->
+    <div class="Question-2" *ngIf="Current_Question === 2">
+      <h1 class="Question text">Where are you from?</h1>
+      <mat-form-field class="Question-2-Input">
+        <input matInput placeholder="Country" value="{{Q2_A.Country}}">
+      </mat-form-field>
+      <mat-form-field class="Question-2-Input">
+        <input matInput placeholder="State" value="{{Q2_A.State}}">
+      </mat-form-field>
+      <mat-form-field class="Question-2-Input">
+        <input matInput placeholder="City" value="{{Q2_A.City}}">
+      </mat-form-field>
+    </div>
+
+
+    <!-- QUESTION 3 -->
+    <div class="Question-3" *ngIf="Current_Question === 3">
+      <h1 class="Question text">What is your skin type?</h1>
+      <img src="../../assets/Photos/Skin_Type_1_Normal.svg" class="ST1">
+      <img src="../../assets/Photos/Skin_Type_2_Oily.svg" class="ST1">
+      <img src="../../assets/Photos/Skin_Type_3_Combination.svg" class="ST1">
+      <img src="../../assets/Photos/Skin_Type_4_Dry.svg" class="ST1">
+
+
+    </div>
+
+    <button color="primary" mat-raised-button class="Back" (click)="Back()">Back</button>
+    <button color="primary" mat-raised-button class="Next" (click)="Next()">Next</button>
+  </mat-card>
+</div>
+
