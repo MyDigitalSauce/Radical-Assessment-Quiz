@@ -12,7 +12,7 @@
         understand your skin and its environment. <br><br> To begin please sign up!</h2>
       <form [formGroup]="Details">
       <mat-form-field class="Input" >
-        <input matInput placeholder="Email" value="{{Email}}" type="email" formControlName="email" (change)="recheck()">
+        <input matInput placeholder="Email"  type="email" formControlName="email" >
         <mat-error *ngIf="email.hasError('email') && !email.hasError('required')">
           Please enter a valid email address
         </mat-error>
@@ -21,13 +21,16 @@
         </mat-error>
       </mat-form-field>
       <mat-form-field class="Input">
-        <input matInput placeholder="Password" value="{{Password}}" type="password" minlength="8" formControlName="password">
+        <input matInput placeholder="Password" type="password" minlength="8" formControlName="password">
         <mat-error *ngIf="password.hasError('required')">
           Password must be at least <strong>8 characters</strong>
         </mat-error>
       </mat-form-field>
       <mat-form-field class="Input">
-        <input matInput placeholder="Confirm" value="{{Password_Confirm}}" type="password" formControlName="password_confirm">
+        <input matInput placeholder="Confirm"  type="password" formControlName="password_confirm" [errorStateMatcher]="matcher">
+        <mat-error *ngIf="Details.hasError('notSame')">
+          Passwords do not match
+        </mat-error>
       </mat-form-field>
       </form>
     </div>

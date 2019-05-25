@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
+import {MyErrorStateMatcher} from "../Errors/ErrorStateMatcher";
+
+
 
 @Component({
   selector: 'app-stepper',
@@ -13,11 +16,8 @@ export class StepperComponent implements OnInit {
 
   // CREDENTIAL VARIABLES
   Details: FormGroup;
+  matcher = new MyErrorStateMatcher();
 
-
-  Email = "";
-  Password = "";
-  Password_Confirm = "";
 
   // QUESTION VARIABLES
   Q1_A = "";
@@ -29,17 +29,21 @@ export class StepperComponent implements OnInit {
   Q3_A;
   Q4_A;
 
-  constructor() {}
+  constructor(private formBuilder: FormBuilder) {}
 
   // GETTERS AND SETTERS
   get email() { return this.Details.get( 'email' ); }
   get password() { return this.Details.get( 'password' ); }
   get password_confirm() { return this.Details.get( 'password_confirm' ); }
-
+  checkPasswords(group: FormGroup) { // here we have the 'passwords' group
+    let pass = group.controls.password.value;
+    let confirmPass = group.controls.password_confirm.value;
+    return pass === confirmPass ? null : { notSame: true }
+  }
   ngOnInit() {
     this.Current_Question = 0;
 
-    this.Details =  new FormGroup ({
+    this.Details = this.formBuilder.group ({
       email: new FormControl('', [
         Validators.required,
         Validators.email,
@@ -48,9 +52,8 @@ export class StepperComponent implements OnInit {
         Validators.required
       ]),
       password_confirm: new FormControl('', [
-        Validators.required
-      ])
-    });
+        Validators.required])
+    }, {validator: this.checkPasswords });
 
   }
 
@@ -70,8 +73,4 @@ export class StepperComponent implements OnInit {
         this.Current_Question++;
   }
 
-
-  recheck()  {
-    console.log(this.Details.valid);
-  }
 }
