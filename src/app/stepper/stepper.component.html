@@ -5,6 +5,35 @@
   <mat-card class="background-card">
     <mat-progress-bar mode="determinate" value="{{((Current_Question-1)/6) * 100}}"></mat-progress-bar>
 
+    <!-- WELCOME HEADER -->
+    <div class="Welcome_Header" *ngIf="Current_Question === 0">
+      <h1 class="Title text">Welcome!</h1>
+      <h2 class="text">To identify the most effective routine for your needs we first need to
+        understand your skin and its environment. <br><br> To begin please sign up!</h2>
+      <form [formGroup]="Details">
+      <mat-form-field class="Input" >
+        <input matInput placeholder="Email" value="{{Email}}" type="email" formControlName="email" (change)="recheck()">
+        <mat-error *ngIf="email.hasError('email') && !email.hasError('required')">
+          Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf="email.hasError('required')">
+          Email is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="Input">
+        <input matInput placeholder="Password" value="{{Password}}" type="password" minlength="8" formControlName="password">
+        <mat-error *ngIf="password.hasError('required')">
+          Password must be at least <strong>8 characters</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="Input">
+        <input matInput placeholder="Confirm" value="{{Password_Confirm}}" type="password" formControlName="password_confirm">
+      </mat-form-field>
+      </form>
+    </div>
+    <!-- ---------------- -->
+
+
     <!-- QUESTION 1 -->
     <div class="Question-1" *ngIf="Current_Question === 1">
       <h1 class="Question text">What is your age?</h1>
@@ -27,7 +56,6 @@
       </mat-form-field>
     </div>
 
-
     <!-- QUESTION 3 -->
     <div class="Question-3" *ngIf="Current_Question === 3">
       <h1 class="Question text">What is your skin type?</h1>
@@ -35,12 +63,18 @@
       <img src="../../assets/Photos/Skin_Type_2_Oily.svg" class="ST1">
       <img src="../../assets/Photos/Skin_Type_3_Combination.svg" class="ST1">
       <img src="../../assets/Photos/Skin_Type_4_Dry.svg" class="ST1">
-
-
     </div>
 
-    <button color="primary" mat-raised-button class="Back" (click)="Back()">Back</button>
-    <button color="primary" mat-raised-button class="Next" (click)="Next()">Next</button>
+    <!-- QUESTION 4 -->
+    <div class="Question-4" *ngIf="Current_Question === 4">
+      <h1 class="Question text">What is your skin type?</h1>
+    </div>
+
+    <button color="primary" mat-raised-button class="Back" (click)="Back()" *ngIf="Current_Question > 1">Back</button>
+    <button color="primary" mat-raised-button class="Next" (click)="Next()" *ngIf="Current_Question > 0">Next</button>
+    <button color="primary" mat-raised-button class="Begin" (click)="Begin()" *ngIf="Current_Question === 0"
+            [disabled]="Details.invalid">Begin!</button>
+
   </mat-card>
 </div>
 
