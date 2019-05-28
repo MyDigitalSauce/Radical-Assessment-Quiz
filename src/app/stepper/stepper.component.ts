@@ -41,7 +41,7 @@ export class StepperComponent implements OnInit {
     return pass === confirmPass ? null : { notSame: true }
   }
   ngOnInit() {
-    this.Current_Question = 0;
+    this.Current_Question = 1;
 
     this.Details = this.formBuilder.group ({
       email: new FormControl('', [
