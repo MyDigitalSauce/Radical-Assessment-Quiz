@@ -6,10 +6,6 @@
 }
 
 // text
-
-.Question {
-  margin-top: 24px;
-}
 .text {
   font-family: 'Montserrat', sans-serif;
   font-size: 14px;
@@ -17,12 +13,27 @@
   color: #21030d;
   text-align: center;
 }
+.Question {
+  margin-top: 24px;
+  font-weight: 700;
+}
+.subQuestion  {
+  font-size: 12px;
+  font-weight: 300;
+  width: 80%;
+  margin: 18px 10% 18px 10%;
+
+}
+.sub3 {
+
+}
 .Title  {
   text-align: center;
   font-family: 'Montserrat', sans-serif;
   font-size: 24px;
   color: #b20639;
   font-weight: 300;
+  margin-top: 24px;
 }
 .quiz-form  {
   align-content: center;
@@ -63,4 +74,91 @@
 }
 .ST1:hover  {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+
+// Q4 Buttons
+.Button_Container {
+  margin: auto;
+}
+.Routine_Button {
+  width: auto;
+  height: 100px;
+  border: solid 1px #f0f0f0;
+  background-color: #fbfbfb;
+  border-radius: 2px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  transition: .1s ease;
+}
+.Routine_Button_Outer {
+  padding: 12px;
+}
+.routinetext  {
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;
+  width: 100%;
+  font-family: 'Montserrat', sans-serif;
+  color: #2c2c2c;
+}
+
+
+//Q5 Buttons
+.Skin-Text  {
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;
+  width: 100%;
+  font-family: 'Montserrat', sans-serif;
+  color: #2c2c2c;
+}
+.Skin-Button {
+  width: 90%;
+  margin: auto;
+  height: auto;
+  border: solid 1px #f0f0f0;
+  background-color: #fbfbfb;
+  border-radius: 2px;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  padding: 6px;
+  transition: .1s ease;
+}
+.Skin-Pic-Container {
+  margin: auto;
+  align-items: center;
+  width: 100%;
+}
+.Skin-Pic {
+  width: 90%;
+  margin: auto;
+  padding: 12px;
+}
+.Skin-Button-Container  {
+  width: 90%;
+  margin: auto;
+}
+.Skin-Col {
+  padding: 12px;
+}
+
+//QUESTION 6
+.textarea1  {
+  width: 80%;
+  margin: 24px 10% 24px 10%;
+
+}
+.textarea2  {
+  height: 200px;
+
 }

@@ -39,15 +39,16 @@
 
     <!-- QUESTION 1 -->
     <div class="Question-1" *ngIf="Current_Question === 1">
-      <h1 class="Question text">What is your age?</h1>
+      <h1 class="Question text"><strong>What is your age?</strong></h1>
       <mat-form-field class="Question-1-Input">
         <input matInput placeholder="Age" value="{{Q1_A}}">
       </mat-form-field>
     </div>
+    <!-- QUESTION 1 -->
 
     <!-- QUESTION 2 -->
     <div class="Question-2" *ngIf="Current_Question === 2">
-      <h1 class="Question text">Where are you from?</h1>
+      <h1 class="Question text"><strong> Where are you from?</strong></h1>
       <mat-form-field class="Question-2-Input">
         <input matInput placeholder="Country" value="{{Q2_A.Country}}">
       </mat-form-field>
@@ -58,26 +59,231 @@
         <input matInput placeholder="City" value="{{Q2_A.City}}">
       </mat-form-field>
     </div>
+    <!-- QUESTION 2 -->
 
     <!-- QUESTION 3 -->
     <div class="Question-3" *ngIf="Current_Question === 3">
       <h1 class="Question text">What is your skin type?</h1>
-      <img src="../../assets/Photos/Skin_Type_1_Normal.svg" class="ST1">
-      <img src="../../assets/Photos/Skin_Type_2_Oily.svg" class="ST1">
-      <img src="../../assets/Photos/Skin_Type_3_Combination.svg" class="ST1">
-      <img src="../../assets/Photos/Skin_Type_4_Dry.svg" class="ST1">
+      <h1 class="subQuestion text sub3">Not sure? Try this: Wash your face with a mild cleanser, don't apply any products and wait a couple of hours before looking for the characteristics described below</h1>
+      <div class="row Skin-Button-Container">
+        <div class="col-md-3 Skin-Col">
+          <div class="row Skin-Pic-Container">
+            <img src="../../assets/Photos/Skin_Type_1_Normal.svg" class="Skin-Pic">
+          </div>
+          <div class="row">
+            <div class="Skin-Button" [ngStyle]="skinTextureType === 'normal' ? {'background-color':'#f0f0f0'} : {}" (click)="selectTextureType('normal')">
+              <p class="Skin-Text">
+                <strong>Normal<br><br></strong>
+                No excess shine or dry areas · Smooth texture & appearance · Small pores · Generally blemish-free
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 Skin-Col">
+          <div class="row Skin-Pic-Container">
+            <img src="../../assets/Photos/Skin_Type_2_Oily.svg" class="Skin-Pic">
+          </div>
+          <div class="row">
+            <div class="Skin-Button" [ngStyle]="skinTextureType === 'oily' ? {'background-color':'#f0f0f0'} : {}" (click)="selectTextureType('oily')">
+              <p class="Skin-Text">
+             <strong>Oily<br><br></strong>
+                Noticeable shine · Visible pores across face · Frequent breakouts and blackheads
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 Skin-Col">
+          <div class="row Skin-Pic-Container">
+            <img src="../../assets/Photos/Skin_Type_3_Combination.svg" class="Skin-Pic">
+          </div>
+          <div class="row">
+            <div class="Skin-Button" [ngStyle]="skinTextureType === 'combination' ? {'background-color':'#f0f0f0'} : {}" (click)="selectTextureType('combination')">
+              <p class="Skin-Text">
+              <strong>Combination<br><br></strong>
+                Oilier T-zones with drier cheeks · Pores may be visible across forehead, nose, chin or cheeks
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 Skin-Col">
+          <div class="row Skin-Pic-Container">
+            <img src="../../assets/Photos/Skin_Type_4_Dry.svg" class="Skin-Pic">
+          </div>
+          <div class="row">
+            <div class="Skin-Button" [ngStyle]="skinTextureType === 'dry' ? {'background-color':'#f0f0f0'} : {}" (click)="selectTextureType('dry')">
+              <p class="Skin-Text">
+              <strong>Dry<br><br></strong>
+                Can look dull or rough all over · Few visible pores · Feels tight and may be itchy · No oily shine
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-
+    <!-- QUESTION 3 -->
 
     <!-- QUESTION 4 -->
     <div class="Question-4" *ngIf="Current_Question === 4">
-      <h1 class="Question text">What is your skin type?</h1>
+      <h1 class="Question text">What is currently included in your skincare routine?</h1>
+      <h1 class="subQuestion text">Select all that apply</h1>
+      <div class="row Button_Container">
+        <div class="col-md-3 Routine_Button_Outer">
+          <div class="Routine_Button" [ngStyle]="Cleanser ? {'background-color':'#f0f0f0'} : {}" (click)="Cleanser = !Cleanser">
+            <p class="routinetext">
+              Cleanser or Face wash
+            </p>
+          </div>
+        </div>
+        <div class="col-md-3 Routine_Button_Outer">
+          <div class="Routine_Button" [ngStyle]="Toner ? {'background-color':'#f0f0f0'} : {}" (click)="Toner = !Toner">
+            <p class="routinetext">
+              Toner
+            </p>
+          </div>
+        </div>
+        <div class="col-md-3 Routine_Button_Outer">
+          <div class="Routine_Button" [ngStyle]="Moisturizer ? {'background-color':'#f0f0f0'} : {}" (click)="Moisturizer = !Moisturizer">
+            <p class="routinetext">
+              Moisturizer
+            </p>
+          </div>
+        </div>
+        <div class="col-md-3 Routine_Button_Outer">
+          <div class="Routine_Button" [ngStyle]="Sunscreen ? {'background-color':'#f0f0f0'} : {}" (click)="Sunscreen = !Sunscreen">
+            <p class="routinetext">
+              Daily Sunscreen SPF 30+
+            </p>
+          </div>
+        </div>
+        <div class="col-md-3 Routine_Button_Outer">
+          <div class="Routine_Button" [ngStyle]="Hydroxy ? {'background-color':'#f0f0f0'} : {}" (click)="Hydroxy = !Hydroxy">
+            <p class="routinetext">
+              Alpha or Beta Hydroxy Acid
+            </p>
+          </div>
+        </div>
+        <div class="col-md-3 Routine_Button_Outer">
+          <div class="Routine_Button" [ngStyle]="Vitamin ? {'background-color':'#f0f0f0'} : {}" (click)="Vitamin = !Vitamin">
+            <p class="routinetext">
+              Vitamin C Serum
+            </p>
+          </div>
+        </div>
+        <div class="col-md-3 Routine_Button_Outer">
+          <div class="Routine_Button" [ngStyle]="Retinol ? {'background-color':'#f0f0f0'} : {}" (click)="Retinol = !Retinol">
+            <p class="routinetext">
+              Retinol
+            </p>
+          </div>
+        </div>
+        <div class="col-md-3 Routine_Button_Outer">
+          <div class="Routine_Button" [ngStyle]="Other ? {'background-color':'#f0f0f0'} : {}" (click)="Other = !Other">
+            <p class="routinetext">
+              Other Masks or Treatments
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
+    <!-- QUESTION 4 -->
 
-    <button color="primary" mat-raised-button class="Back" (click)="Back()" *ngIf="Current_Question > 1">Back</button>
+    <!-- QUESTION 5 -->
+    <div class="Question-5" *ngIf="Current_Question === 5">
+      <h1 class="Question text">What best describes your natural skin tone?</h1>
+      <div class="row Skin-Button-Container">
+        <div class="col-md-2 Skin-Col">
+          <div class="row Skin-Pic-Container">
+            <img src="../../assets/Skins/question9_choice1_img.png" class="Skin-Pic">
+          </div>
+          <div class="row">
+            <div class="Skin-Button" [ngStyle]="skinType === 'very fair' ? {'background-color':'#f0f0f0'} : {}" (click)="selectType('very fair')">
+              <p class="Skin-Text">
+                Very Fair, Generally Burns
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2 Skin-Col">
+          <div class="row Skin-Pic-Container">
+            <img src="../../assets/Skins/question9_choice2_img.png" class="Skin-Pic">
+          </div>
+          <div class="row">
+            <div class="Skin-Button" [ngStyle]="skinType === 'fair' ? {'background-color':'#f0f0f0'} : {}" (click)="selectType('fair')">
+              <p class="Skin-Text">
+                Fair, Generally Burns
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2 Skin-Col">
+          <div class="row Skin-Pic-Container">
+            <img src="../../assets/Skins/question9_choice3_img.png" class="Skin-Pic">
+          </div>
+          <div class="row">
+            <div class="Skin-Button" [ngStyle]="skinType === 'light' ? {'background-color':'#f0f0f0'} : {}" (click)="selectType('light')">
+              <p class="Skin-Text">
+                Light, Occasionally burns
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2 Skin-Col">
+          <div class="row Skin-Pic-Container">
+            <img src="../../assets/Skins/question9_choice4_img.png" class="Skin-Pic">
+          </div>
+          <div class="row">
+            <div class="Skin-Button" [ngStyle]="skinType === 'medium' ? {'background-color':'#f0f0f0'} : {}" (click)="selectType('medium')">
+              <p class="Skin-Text">
+                Medium, Rarely burns
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2 Skin-Col">
+          <div class="row Skin-Pic-Container">
+            <img src="../../assets/Skins/question9_choice5_img.png" class="Skin-Pic">
+          </div>
+          <div class="row">
+            <div class="Skin-Button" [ngStyle]="skinType === 'dark' ? {'background-color':'#f0f0f0'} : {}" (click)="selectType('dark')">
+              <p class="Skin-Text">
+                Dark, Very rarely burns
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2 Skin-Col">
+          <div class="row Skin-Pic-Container">
+            <img src="../../assets/Skins/question9_choice6_img.png" class="Skin-Pic">
+          </div>
+          <div class="row">
+            <div class="Skin-Button" [ngStyle]="skinType === 'very dark' ? {'background-color':'#f0f0f0'} : {}" (click)="selectType('very dark')">
+              <p class="Skin-Text">
+                Very Dark, Never Burns
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- QUESTION 5 -->
+
+
+    <!-- QUESTION 6 -->
+    <div class="Question-3" *ngIf="Current_Question === 6">
+      <h1 class="Question text">What skincare products are you currently using?</h1>
+      <h1 class="subQuestion text"><strong>This helps us understand how your skin is reacting to different textures and ingredients</strong></h1>
+      <h1 class="subQuestion text">If there’s anything else you’d like us to know including skincare allergies, requests or any other background please include it here</h1>
+
+      <mat-form-field class="textarea1">
+        <textarea class="textarea2" matInput placeholder="Description"></textarea>
+      </mat-form-field>
+    </div>
+    <!-- QUESTION 6 -->
+
+
     <button color="primary" mat-raised-button class="Next" (click)="Next()" *ngIf="Current_Question > 0">Next</button>
-    <button color="primary" mat-raised-button class="Begin" (click)="Begin()" *ngIf="Current_Question === 0"
-            [disabled]="Details.invalid">Begin!</button>
+    <button color="primary" mat-raised-button class="Back" (click)="Back()" *ngIf="Current_Question > 1">Back</button>
+    <button color="primary" mat-raised-button class="Begin" (click)="Begin()" *ngIf="Current_Question === 0" [disabled]="Details.invalid">Begin!</button>
 
   </mat-card>
 </div>
