@@ -4,7 +4,9 @@
   height: 80vh;
   margin-top: 48px;
 }
-
+.background-card  {
+  text-align: center;
+}
 // text
 .text {
   font-family: 'Montserrat', sans-serif;
@@ -41,16 +43,31 @@
 
 // buttons
 .Next {
-  margin: 12px 10% 12px 10%;
-  width: 80%;
+  margin: 6px;
+  width: fit-content;
 }
-.Back{
-  margin: 12px 10% 12px 10%;
-  width: 80%;
+.Back {
+  margin: 6px;
+  width: fit-content;
 }
-.Begin{
-  margin: 12px 10% 12px 10%;
-  width: 80%;
+.Begin {
+  margin: 0 auto;
+  width: fit-content;
+}
+
+@media only screen and (max-width: 600px) {
+  .Next {
+    margin: 12px 10% 12px 10%;
+    width: 80%;
+  }
+  .Back {
+    margin: 12px 10% 12px 10%;
+    width: 80%;
+  }
+  .Begin {
+    margin: 12px 10% 12px 10%;
+    width: 80%;
+  }
 }
 
 //Inputs

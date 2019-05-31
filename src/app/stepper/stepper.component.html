@@ -278,8 +278,8 @@
       </mat-form-field>
     </div>
     <!-- QUESTION 6 -->
-    <button color="primary" mat-raised-button class="Next" (click)="Next()" *ngIf="Current_Question > 0">Next</button>
     <button color="primary" mat-raised-button class="Back" (click)="Back()" *ngIf="Current_Question > 1">Back</button>
+    <button color="primary" mat-raised-button class="Next" (click)="Next()" *ngIf="Current_Question > 0">Next</button>
     <button color="primary" mat-raised-button class="Begin" (click)="Begin()" *ngIf="Current_Question === 0" [disabled]="Details.invalid">Begin!</button>
 
   </mat-card>
