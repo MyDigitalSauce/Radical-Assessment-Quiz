@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {MyErrorStateMatcher} from "../Errors/ErrorStateMatcher";
+import {LoginService} from "../login.service";
+import {User} from "../models/user";
 
 
 
@@ -59,7 +61,7 @@ export class StepperComponent implements OnInit {
   Q3_A;
   Q4_A;
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(private formBuilder: FormBuilder, private login: LoginService) {}
 
   // GETTERS AND SETTERS
   get email() {
@@ -78,7 +80,7 @@ export class StepperComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.Current_Question = 6;
+    this.Current_Question = 0;
     this.Details = this.formBuilder.group ({
       email: new FormControl('', [
         Validators.required,
@@ -104,8 +106,30 @@ export class StepperComponent implements OnInit {
   }
   Begin() {
     //send request to server
+    let user = new User;
+    user.email = this.Details.get( 'email' ).value;
+    this.login.logIn(user).subscribe(
+          data => {
+
+            console.log(data.ID);
+            user.id = data.ID;
+            user.username = data.user_login;
+            user.password = this.Details.get('password').value;
+            this.login.getToken(user).subscribe(
+              data1 => {
+                console.log(data1);
+              },
+              error =>  {
+                console.error(error);
+              }
+            );
+          },
+          error =>  {
+            console.error(error);
+          }
+        );
       //if approved proceed
-        this.Current_Question++;
+        //this.Current_Question++;
   }
 
 }
