@@ -1,5 +1,3 @@
-  <h1 class="Title">Skin Care Quiz</h1>
-
 
 <div class="container">
   <mat-card class="background-card">
@@ -8,8 +6,8 @@
     <!-- WELCOME HEADER -->
     <div class="Welcome_Header" *ngIf="Current_Question === 0">
       <h1 class="Title text">Welcome!</h1>
-      <h2 class="text">To identify the most effective routine for your needs we first need to
-        understand your skin and its environment. <br><br> To begin please sign up!</h2>
+      <p class="text">To identify the most effective routine for your needs we first need to
+        understand your skin and its environment. <br><br> To begin please sign up!</p>
       <form [formGroup]="Details">
       <mat-form-field class="Input" >
         <input matInput placeholder="Email"  type="email" formControlName="email" >
