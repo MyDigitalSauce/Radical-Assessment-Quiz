@@ -1,9 +1,9 @@
 Set up server ----D
-set up submission button ----2
+set up submission button ----D
 set all fields to required   ----D
-Hook up all inputs to answers ---- 3
-save answers to question object ---- 4
-save questions to submission object ---- 5
+Hook up all inputs to answers ---- D
+save answers to question object ---- D
+save questions to submission object ---- D
 send submission object to db ------ 6
 create submission object in db ---- 7
 

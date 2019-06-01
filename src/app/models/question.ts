@@ -1,7 +1,7 @@
 export class Question {
-  ID: string;
+  ID: any;
   TitleText: string;
-  Answer: string;
+  Answer: any;
   UserID: string;
-  Time: string;
+  Time: any;
 }

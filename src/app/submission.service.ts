@@ -7,7 +7,7 @@ import {Submission} from "./models/submission";
 })
 export class SubmissionService {
 
-  url1 = 'localhost:3000/createSubmission';
+  url1 = 'http://localhost:3000/createSubmission';
 
   constructor(private http: HttpClient) {}
 

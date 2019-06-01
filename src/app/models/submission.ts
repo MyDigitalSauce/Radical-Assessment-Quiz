@@ -1,7 +1,8 @@
 import {Question} from "./question";
 
 export class Submission {
-  Questions: [Question];
-  SubmitTime: string;
+  Questions: any;
+  SubmitTime: any;
   ID: string;
+  Username: string;
 }
