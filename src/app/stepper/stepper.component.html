@@ -12,7 +12,7 @@
         understand your skin and its environment. <br><br> To begin please sign up!</h2>
       <form [formGroup]="Details">
       <mat-form-field class="Input" >
-        <input matInput placeholder="Email" value="" type="email" formControlName="email" >
+        <input matInput placeholder="Email" value="Haske107@mail.chapman.edu" type="email" formControlName="email" >
         <mat-error *ngIf="email.hasError('email') && !email.hasError('required')">
           Please enter a valid email address
         </mat-error>
@@ -21,13 +21,13 @@
         </mat-error>
       </mat-form-field>
       <mat-form-field class="Input">
-        <input matInput value="" placeholder="Password" type="password" minlength="8" formControlName="password">
+        <input matInput value="1x!CRM7zAqwe8S0cd6*(UW)Y" placeholder="Password" type="password" minlength="8" formControlName="password">
         <mat-error *ngIf="password.hasError('required')">
           Password must be at least <strong>8 characters</strong>
         </mat-error>
       </mat-form-field>
       <mat-form-field class="Input">
-        <input matInput value="" placeholder="Confirm"  type="password" formControlName="password_confirm" [errorStateMatcher]="matcher">
+        <input matInput value="1x!CRM7zAqwe8S0cd6*(UW)Y" placeholder="Confirm"  type="password" formControlName="password_confirm" [errorStateMatcher]="matcher">
         <mat-error *ngIf="Details.hasError('notSame')">
           Passwords do not match
         </mat-error>
@@ -40,7 +40,7 @@
     <div class="Question-1" *ngIf="Current_Question === 1">
       <h1 class="Question text"><strong>What is your age?</strong></h1>
       <mat-form-field class="Question-1-Input">
-        <input matInput placeholder="Age" value="{{Q1_A}}">
+        <input matInput placeholder="Age" value="{{Q1_A}}" [(ngModel)]="Q1_A">
       </mat-form-field>
     </div>
     <!-- QUESTION 1 -->
@@ -49,13 +49,13 @@
     <div class="Question-2" *ngIf="Current_Question === 2">
       <h1 class="Question text"><strong> Where are you from?</strong></h1>
       <mat-form-field class="Question-2-Input">
-        <input matInput placeholder="Country" value="{{Q2_A.Country}}">
+        <input matInput placeholder="Country" value="{{Q2_Country}}" [(ngModel)]="Q2_Country">
       </mat-form-field>
       <mat-form-field class="Question-2-Input">
-        <input matInput placeholder="State" value="{{Q2_A.State}}">
+        <input matInput placeholder="State" value="{{Q2_State}}" [(ngModel)]="Q2_State">
       </mat-form-field>
       <mat-form-field class="Question-2-Input">
-        <input matInput placeholder="City" value="{{Q2_A.City}}">
+        <input matInput placeholder="City" value="{{Q2_City}}" [(ngModel)]="Q2_City">
       </mat-form-field>
     </div>
     <!-- QUESTION 2 -->
@@ -266,7 +266,6 @@
     </div>
     <!-- QUESTION 5 -->
 
-
     <!-- QUESTION 6 -->
     <div class="Question-3" *ngIf="Current_Question === 6">
       <h1 class="Question text">What skincare products are you currently using?</h1>
@@ -274,13 +273,14 @@
       <h1 class="subQuestion text">If there’s anything else you’d like us to know including skincare allergies, requests or any other background please include it here</h1>
 
       <mat-form-field class="textarea1">
-        <textarea class="textarea2" matInput placeholder="Description"></textarea>
+        <textarea class="textarea2" matInput placeholder="Description" value="{{description}}" [(ngModel)]="description"></textarea>
       </mat-form-field>
     </div>
     <!-- QUESTION 6 -->
     <button color="primary" mat-raised-button class="Back" (click)="Back()" *ngIf="Current_Question > 1">Back</button>
-    <button color="primary" mat-raised-button class="Next" (click)="Next()" *ngIf="Current_Question > 0">Next</button>
+    <button color="primary" mat-raised-button class="Next" (click)="Next()" *ngIf="Current_Question > 0 && Current_Question !==6">Next</button>
     <button color="primary" mat-raised-button class="Begin" (click)="Begin()" *ngIf="Current_Question === 0" [disabled]="Details.invalid">Begin!</button>
+    <button color="primary" mat-raised-button class="Submit" (click)="Submit()" *ngIf="Current_Question === 6">Submit</button>
 
   </mat-card>
 </div>

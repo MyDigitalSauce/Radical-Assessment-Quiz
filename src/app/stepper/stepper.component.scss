@@ -72,17 +72,31 @@
 
 //Inputs
 .Input{
-  width: 80%;
-  margin: 12px 10% 12px 10%;
+  width: 300px;
+  margin: 12px calc(50% - 200px) 12px calc(50% - 200px) ;
 }
 .Question-1-Input {
-  width: 80%;
-  margin: 12px 10% 12px 10%;
+  width: 200px;
+  margin: 12px calc(50% - 200px) 12px calc(50% - 200px) ;
+}.Question-2-Input {
+   width: 300px;
+   margin: 12px calc(50% - 200px) 12px calc(50% - 200px)
+ }
+@media only screen and (max-width: 600px) {
+  .Input{
+    width: 80%;
+    margin: 12px 10% 12px 10%;
+  }
+  .Question-1-Input {
+    width: 80%;
+    margin: 12px 10% 12px 10%;
+  }
+  .Question-2-Input {
+    width: 80%;
+    margin: 12px 10% 12px 10%;
+  }
 }
-.Question-2-Input {
-  width: 80%;
-  margin: 12px 10% 12px 10%;
-}
+
 
 
 // Photos

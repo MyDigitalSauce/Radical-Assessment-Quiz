@@ -1,9 +1,10 @@
 {
   "name": "quiz-a",
   "version": "0.0.0",
+  "main": "server/index.js",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node .",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -22,11 +23,14 @@
     "@angular/platform-browser": "^6.0.3",
     "@angular/platform-browser-dynamic": "^6.0.3",
     "@angular/router": "^6.0.3",
+    "@nestjs/mongoose": "^6.1.2",
     "ajv": "^6.10.0",
     "bootstrap": "^4.3.1",
     "core-js": "^2.5.4",
+    "express": "^4.17.1",
     "jquery": "^1.9.1",
     "material-design-icons": "^3.0.1",
+    "mongoose": "^5.5.12",
     "popper.js": "^1.15.0",
     "rxjs": "6.0.0",
     "zone.js": "^0.8.26"

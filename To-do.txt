@@ -1,0 +1,9 @@
+Set up server
+set up submission button
+set all fields to required
+Hook up all inputs to answers
+save answers to question object
+save questions to submission object
+send submission object to db
+create submission object in db
+

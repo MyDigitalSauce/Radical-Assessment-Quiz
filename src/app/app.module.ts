@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { StepperComponent } from './stepper/stepper.component';
 import {
-  MatButtonModule, MatCardModule, MatInputModule, MatProgressBarModule, MatSliderModule,
+  MatButtonModule, MatCardModule, MatInputModule, MatProgressBarModule, MatSliderModule, MatSnackBarModule,
   MatStepperModule,
 } from "@angular/material";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
@@ -22,6 +22,7 @@ import {HttpClientModule} from "@angular/common/http";
     MatInputModule,
     MatButtonModule,
     MatStepperModule,
+    MatSnackBarModule,
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
