@@ -77,29 +77,27 @@ export class StepperComponent implements OnInit {
   get password() {
     return this.Details.get( 'password' );
   }
-  get password_confirm() {
-    return this.Details.get( 'password_confirm' );
-  }
- checkPasswords(group: FormGroup) {
-    let pass = group.controls.password.value;
-    let confirmPass = group.controls.password_confirm.value;
-    return pass === confirmPass ? null : { notSame: true }
-  }
+
+ // checkPasswords(group: FormGroup) {
+ //    let pass = group.controls.password.value;
+ //    let confirmPass = group.controls.password_confirm.value;
+ //    return pass === confirmPass ? null : { notSame: true }
+ //  }
 
   ngOnInit() {
     this.Current_Question = 0;
     this.Details = this.formBuilder.group ({
       email: new FormControl('', [
-        //Validators.required,
-        //Validators.email,
+        Validators.required,
+        Validators.email,
       ]),
       password: new FormControl('', [
-        //Validators.required
+        Validators.required
       ]),
       password_confirm: new FormControl('', [
         //Validators.required
       ])
-    }, {validator: this.checkPasswords });
+    });
   }
 
   Back()  {

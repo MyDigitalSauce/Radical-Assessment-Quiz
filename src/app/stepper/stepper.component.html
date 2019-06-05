@@ -26,12 +26,6 @@
           Password must be at least <strong>8 characters</strong>
         </mat-error>
       </mat-form-field>
-      <mat-form-field class="Input">
-        <input matInput value="1x!CRM7zAqwe8S0cd6*(UW)Y" placeholder="Confirm"  type="password" formControlName="password_confirm" [errorStateMatcher]="matcher">
-        <mat-error *ngIf="Details.hasError('notSame')">
-          Passwords do not match
-        </mat-error>
-      </mat-form-field>
       </form>
     </div>
     <!-- ---------------- -->
