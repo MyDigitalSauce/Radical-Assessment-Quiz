@@ -2,7 +2,9 @@
 .mat-progress-bar {
   height: 8px;
 }
-
+.background-card  {
+  text-align: center;
+}
 // text
 .text {
   font-family: 'Montserrat', sans-serif;
@@ -39,31 +41,60 @@
 
 // buttons
 .Next {
-  margin: 12px 10% 12px 10%;
-  width: 80%;
+  margin: 6px;
+  width: fit-content;
 }
-.Back{
-  margin: 12px 10% 12px 10%;
-  width: 80%;
+.Back {
+  margin: 6px;
+  width: fit-content;
 }
-.Begin{
-  margin: 12px 10% 12px 10%;
-  width: 80%;
+.Begin {
+  margin: 0 auto;
+  width: fit-content;
+}
+
+@media only screen and (max-width: 600px) {
+  .Next {
+    margin: 12px 10% 12px 10%;
+    width: 80%;
+  }
+  .Back {
+    margin: 12px 10% 12px 10%;
+    width: 80%;
+  }
+  .Begin {
+    margin: 12px 10% 12px 10%;
+    width: 80%;
+  }
 }
 
 //Inputs
 .Input{
-  width: 80%;
-  margin: 12px 10% 12px 10%;
+  width: 300px;
+  margin: 12px calc(50% - 200px) 12px calc(50% - 200px) ;
 }
 .Question-1-Input {
-  width: 80%;
-  margin: 12px 10% 12px 10%;
+  width: 200px;
+  margin: 12px calc(50% - 200px) 12px calc(50% - 200px) ;
+}.Question-2-Input {
+   width: 300px;
+   margin: 12px calc(50% - 200px) 12px calc(50% - 200px)
+ }
+@media only screen and (max-width: 600px) {
+  .Input{
+    width: 80%;
+    margin: 12px 10% 12px 10%;
+  }
+  .Question-1-Input {
+    width: 80%;
+    margin: 12px 10% 12px 10%;
+  }
+  .Question-2-Input {
+    width: 80%;
+    margin: 12px 10% 12px 10%;
+  }
 }
-.Question-2-Input {
-  width: 80%;
-  margin: 12px 10% 12px 10%;
-}
+
 
 
 // Photos
